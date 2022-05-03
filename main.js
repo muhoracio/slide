@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=new class{constructor(e,s){this.slide=document.querySelector(e),this.wrapper=document.querySelector(s)}}(".slide",".slide-wrapper");console.log(e)})();
