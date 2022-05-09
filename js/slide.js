@@ -79,7 +79,6 @@ export default class Slide {
       const pos = this.slidePosition(el);
       return { el, pos }
     });
-    this.changeSlide(0);
   }
 
   slidesIndexNav(index) {
@@ -131,10 +130,11 @@ export default class Slide {
   }
 
   init() {
-    this.slidesConfig();
     this.bindEvents();
+    this.slidesConfig();
     this.addSlideEvents();
     this.addResizeEvent();
+    this.changeSlide(0);
     return this;
   }
 }
