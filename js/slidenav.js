@@ -52,6 +52,7 @@ export default class SlideNav extends Slide {
     this.wrapper.addEventListener("changeEvent", this.activeControlItem);
 
     this.controlArray.forEach(this.eventControl);
+    return this;
   }
 
   bindControlEvents() {
