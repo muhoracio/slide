@@ -4,8 +4,9 @@ export default class Slide {
   constructor(slide, wrapper, activeClass) {
     this.slide = document.querySelector(slide);
     this.wrapper = document.querySelector(wrapper);
-    this.activeClass = (activeClass === undefined) ? "active" : activeClass;
+    this.activeClass = activeClass ?? "active";
     this.dist = { finalPos: 0, startX: 0, movement: 0 };
+    this.changeEvent = new Event("changeEvent");
   }
 
   transition(isActive) {
@@ -96,6 +97,7 @@ export default class Slide {
     this.slidesIndexNav(index);
     this.changeActiveClass();
     this.dist.finalPos = activeSlide.pos;
+    this.wrapper.dispatchEvent(this.changeEvent);
   }
 
   changeActiveClass() {
