@@ -131,6 +131,7 @@ export default class Slide {
 
   init() {
     this.bindEvents();
+    this.transition(true);
     this.slidesConfig();
     this.addSlideEvents();
     this.addResizeEvent();
